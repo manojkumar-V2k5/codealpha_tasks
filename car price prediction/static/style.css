@@ -1,0 +1,112 @@
+/* Body with Netflix theme */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Netflix uses a clean, modern font */
+    background-color: #141414; /* Netflix's signature dark background */
+    color: #ffffff; /* Light text color for contrast */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Scrollable container for content */
+.container {
+    text-align: center;
+    background-color: #1f1f1f; /* Slightly lighter dark background for contrast */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7); /* Deeper shadow for drama */
+    width: 90%;
+    max-width: 500px; /* Wider container for better spacing */
+    max-height: 90vh; /* Ensure it fits within the viewport */
+    overflow-y: auto;
+}
+
+/* Styling for the heading */
+h1 {
+    color: #e50914; /* Netflix red */
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Form styles */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+input, select {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #333333; /* Netflix dark gray for inputs */
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border: 1px solid #e50914; /* Highlight in Netflix red */
+    outline: none;
+}
+
+/* Submit button */
+button {
+    padding: 12px 20px;
+    background-color: #e50914; /* Netflix red */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #b00610; /* Darker Netflix red for hover */
+}
+
+/* Link styles */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #e50914; /* Netflix red for links */
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Adjusting the scrollbar appearance */
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #e50914; /* Netflix red scrollbar thumb */
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: #1f1f1f;
+}

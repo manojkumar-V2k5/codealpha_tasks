@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs for Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Roboto Font for Netflix Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Graphs for Analysis</h1>
+
+        <!-- Graph: Company vs Price -->
+        <h3>Company vs Price</h3>
+        <div class="graph-container">
+            <img src="data:image/png;base64,{{ boxplot_image }}" alt="Boxplot - Company vs Price">
+        </div>
+
+        <!-- Graph: Year vs Price -->
+        <h3>Year vs Price</h3>
+        <div class="graph-container">
+            <img src="data:image/png;base64,{{ swarmplot_image }}" alt="Swarmplot - Year vs Price">
+        </div>
+
+        <!-- Graph: Kms Driven vs Price -->
+        <h3>Kms Driven vs Price</h3>
+        <div class="graph-container">
+            <img src="data:image/png;base64,{{ relplot_image }}" alt="Relplot - Kms Driven vs Price">
+        </div>
+
+        <!-- Graph: Fuel Type vs Price -->
+        <h3>Fuel Type vs Price</h3>
+        <div class="graph-container">
+            <img src="data:image/png;base64,{{ boxplot_fuel_image }}" alt="Boxplot - Fuel Type vs Price">
+        </div>
+        
+        <!-- Navigation Link -->
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
