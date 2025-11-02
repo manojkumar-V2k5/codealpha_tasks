@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Flower Theme Data Visualizations</title>
+    <style>
+        /* Body with gradient background and flower animations */
+       body {
+            font-family: 'Arial', sans-serif;
+            /* background: linear-gradient(to right, #ffe6f0, #ffe0b2); */
+            background-image: url(/static/background.jpg) ;
+            background-position: center;
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+            margin: 3em;
+            padding: 1em;
+            height: 100vh;
+            overflow: scroll;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+       }
+
+       /* Heading styles */
+        h1 {
+           color: hsl(6, 28%, 22%);
+           font-family:  "Permanent Marker", cursive;
+           font-size: 2.5em;
+           margin-bottom: 30px;
+           text-shadow: 1px 1px 2px #fff;
+           margin: 10px;
+       }
+
+       .main{
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+
+
+        h2 {
+            color: hsl(8, 28%, 16%);
+            margin-top: 40px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Image styles */
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Button styles */
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            background-color: #d49364;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: #fec195;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Flower Theme Data Visualizations</h1>
+    <div class="main">
+        <h2>Petal Length Distribution by Species</h2>
+        <img src="data:image/png;base64,{{ images['petal_length'] }}" alt="Petal Length Distribution" />
+    
+        <h2>Sepal Width Distribution by Species</h2>
+        <img src="data:image/png;base64,{{ images['sepal_width'] }}" alt="Sepal Width Distribution" />
+    
+        <h2>Pairplot of Iris Features</h2>
+        <img src="data:image/png;base64,{{ images['pairplot'] }}" alt="Pairplot" />
+    
+        <br/><br/>
+        <a href="/">
+            <button>Back to Home</button>
+        </a>
+    </div>
+
+    <script>
+        // Generate multiple floating flowers dynamically
+        const flowerCount = 30; // Number of flowers
+        for (let i = 0; i < flowerCount; i++) {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+
+            // Random position
+            flower.style.left = Math.random() * 100 + 'vw';
+
+            // Random size
+            const size = 20 + Math.random() * 20; // 20px to 40px
+            flower.style.width = size + 'px';
+            flower.style.height = size + 'px';
+
+            // Random animation duration
+            const duration = 10 + Math.random() * 10; // 10s to 20s
+            flower.style.animationDuration = duration + 's';
+
+            // Append to body
+            document.body.appendChild(flower);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Prediction Result</title>
+    <style>
+        /* Body with gradient background and flower animations */
+       body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(/static/background.jpg) ;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+    }
+
+        
+        /* Header style with flower accent */
+       h1 {
+            color: hsl(6, 28%, 22%);
+            font-family:  "Permanent Marker", cursive;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px #fff;
+        }
+
+        span{
+            background-color: #fff3e0;
+            color: black;
+            border-radius: 10px;
+            padding: 0 15px;
+            font-weight: bolder;
+        }
+
+        /* Button styles with flower accents */
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            background-color: #d49364;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: #fec195;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Predicted Iris Species: <span>{{ species }}</span></h1>
+
+    <a href="/predict">
+        <button>Predict Again</button>
+    </a>
+    <a href="/">
+        <button>Back to Home</button>
+    </a>
+
+    <script>
+        // Generate multiple floating flowers dynamically
+        const flowerCount = 30; // Number of flowers
+        for (let i = 0; i < flowerCount; i++) {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+
+            // Random position
+            flower.style.left = Math.random() * 100 + 'vw';
+
+            // Random size
+            const size = 20 + Math.random() * 20; // 20px to 40px
+            flower.style.width = size + 'px';
+            flower.style.height = size + 'px';
+
+            // Random animation duration
+            const duration = 10 + Math.random() * 10; // 10s to 20s
+            flower.style.animationDuration = duration + 's';
+
+            // Append to body
+            document.body.appendChild(flower);
+        }
+    </script>
+</body>
+</html>

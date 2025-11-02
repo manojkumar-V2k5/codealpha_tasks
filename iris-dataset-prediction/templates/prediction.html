@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Predict Iris Species</title>
+    <style>
+        /* Body with gradient background and flower animations */
+      body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(/static/background.jpg) ;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+    }
+
+        /* Header style with flower accent */
+        h1 {
+            color: hsl(6, 28%, 22%);
+            font-family:  "Permanent Marker", cursive;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px #fff;
+        }
+
+        /* Form styles */
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            background-color: #d49364;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: #fec195;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Back button styling */
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predict Iris Species</h1>
+    <form method="post" action="/predict">
+        <label for="sepal_length">Sepal Length:</label>
+        <input type="number" step="0.1" id="sepal_length" name="sepal_length" required>
+
+        <label for="sepal_width">Sepal Width:</label>
+        <input type="number" step="0.1" id="sepal_width" name="sepal_width" required>
+
+        <label for="petal_length">Petal Length:</label>
+        <input type="number" step="0.1" id="petal_length" name="petal_length" required>
+
+        <label for="petal_width">Petal Width:</label>
+        <input type="number" step="0.1" id="petal_width" name="petal_width" required>
+
+        <button type="submit">Predict</button>
+    </form>
+    <br/>
+    <a href="/">
+        <button>Back to Home</button>
+    </a>
+
+    <script>
+        // Generate multiple floating flowers dynamically
+        const flowerCount = 30; // Number of flowers
+        for (let i = 0; i < flowerCount; i++) {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+
+            // Random position
+            flower.style.left = Math.random() * 100 + 'vw';
+
+            // Random size
+            const size = 20 + Math.random() * 20; // 20px to 40px
+            flower.style.width = size + 'px';
+            flower.style.height = size + 'px';
+
+            // Random animation duration
+            const duration = 10 + Math.random() * 10; // 10s to 20s
+            flower.style.animationDuration = duration + 's';
+
+            // Append to body
+            document.body.appendChild(flower);
+        }
+    </script>
+</body>
+</html>
